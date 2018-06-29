@@ -21,6 +21,4 @@ const currentBlockData = [
   }
 ];
 
-
-
 console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
