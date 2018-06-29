@@ -12,6 +12,9 @@ const sha256 = require('sha256');
 function Blockchain() {
   this.chain = [];
   this.pendingTransactions = [];
+  
+  // Genesis Block, the parameters can be arbitrary
+  this.createNewBlock(100, '0', '0');
 }
 
 Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash) {
