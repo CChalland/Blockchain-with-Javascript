@@ -8,12 +8,15 @@ const bitcoin = new Blockchain();
 //bitcoin.createNewTransaction(100, 'ALEXFA54SFJ76LA', 'JENAFJA7FD345NSD');
 // When there's pending transactions, you have to create a new block to push those transactions to blockchain
 //bitcoin.createNewBlock(1243242, 'DAJFDAD354FFD', 'DFJDAFDA345WFSA');
+//console.log(bitcoin);
 
 // Testing mulitiple transactions in one block
 //bitcoin.createNewTransaction(50, 'DAJFDAD354FFD', 'DFJDAFDA345WFSA');
 //bitcoin.createNewTransaction(300, 'DAJFDAD354FFD', 'DFJDAFDA345WFSA');
 //bitcoin.createNewTransaction(2000, 'DAJFDAD354FFD', 'DFJDAFDA345WFSA');
 //bitcoin.createNewBlock(4342442, 'DFSAFJ94385RFD', 'G5T5GWRGL5GW34TGD');
+// To see the blockchain's array
+//console.log(bitcoin.chain[3]);
 
 
 // Creating some values to use with when testing the hashBlock function
@@ -35,12 +38,15 @@ const currentBlockHash = [
         recipient: 'GWWEGTW54G54G4CGG'
     }
 ];
-const nonce = 100;
-// Showing the hashBlock function
+// Testing the nonce function for proofOfWork
+let nonce = bitcoin.proofOfWork(previousBlockHash, currentBlockHash)
+// Showing the nonce from the proofOfWork function
+//console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockHash));
+
+// Showing the hashBlock output
 console.log(bitcoin.hashBlock(previousBlockHash, currentBlockHash, nonce));
 
+// Showing the hashBlock function
+//console.log(bitcoin.hashBlock(previousBlockHash, currentBlockHash, nonce));
 
-// To see the blockchain's array
-//console.log(bitcoin.chain[3]);
 
-//console.log(bitcoin);
