@@ -48,5 +48,5 @@ const bitcoin = new Blockchain();
 // Showing the hashBlock function
 //console.log(bitcoin.hashBlock(previousBlockHash, currentBlockHash, nonce));
 
-// Show the Genesis Block
+// Showing the Genesis Block
  console.log(bitcoin);
