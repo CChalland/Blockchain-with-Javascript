@@ -27,12 +27,12 @@ app.get('/mine', function(req, res) {
     transcation: bitcoin.pendingTransactions,
     index: lastBlock['index'] + 1
   };
-  const nonce = bitcoin.proofOfWork(previousBlockHash, currentBLockData, nonce);
-  const blockHash = bitcoin.hashBlock();
+  const nonce = bitcoin.proofOfWork(previousBlockHash, currentBLockData);
+  const blockHash = bitcoin.hashBlock(previousBlockHash, currentBLockData, nonce);
 
   bitcoin.createNewTransaction(12.5, "00", nodeAddress);
   
-  const newBlock = bitcoin.createNewBlock(nonce, previousBlockHash, hash);
+  const newBlock = bitcoin.createNewBlock(nonce, previousBlockHash, blockHash);
   res.json({
     note: "New block mine successfully",
     block: newBlock
