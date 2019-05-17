@@ -51,7 +51,7 @@ app.post('/register-and-broadcast-node', function(req, res) {
   bitcoin.networkNodes.forEach(networkNodeUrl => {
     const requestOptions = {
       uri: networkNodeUrl + '/register-node',
-      methond: 'POST',
+      method: 'POST',
       body: { newNodeUrl: newNodeUrl },
       json: true
     };
@@ -63,7 +63,7 @@ app.post('/register-and-broadcast-node', function(req, res) {
   .then(data => {
     const bulkRegisterOptions = {
       uri: newNodeUrl + '/register-nodes-bulk',
-      methond: 'POST',
+      method: 'POST',
       body: { allNetworkNodes: [...bitcoin.networkNodes, bitcoin.currentNodeUrl ] },
       json: true
     };
